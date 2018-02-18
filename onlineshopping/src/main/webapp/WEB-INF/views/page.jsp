@@ -53,21 +53,29 @@
 		<div class="content">
 		
 			<!-- Load Home Page -->
-			<c:if test="${userClickHome == true }">
+			<c:if test="${userClickHome == true}">
 				<%@include file="home.jsp"%>
 			</c:if>
 
 			<!-- Load About Page -->
-			<c:if test="${userClickAbout == true }">
+			<c:if test="${userClickAbout == true}">
 				<%@include file="about.jsp"%>
 			</c:if>
 
 			<!-- Load Contact Page -->
-			<c:if test="${userClickContact == true }">
+			<c:if test="${userClickContact == true}">
 				<%@include file="contact.jsp"%>
+			</c:if>
+			
+			
+			<!-- Load only when user clicks All products -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@include file="listProducts.jsp"%>
 			</c:if>
 
 		</div>
+		
+		
 		<!-- footer with container -->
 		<%@include file="./shared/footer.jsp"%>
 
